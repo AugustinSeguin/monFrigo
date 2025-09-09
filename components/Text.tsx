@@ -1,18 +1,21 @@
 import React from "react";
+import { StyleSheet, Text } from "react-native";
 import { COLORS, SIZES } from "../constants/Styles";
 
 type TextProps = {
   text: string;
 };
 
-const textStyle: React.CSSProperties = {
-  color: COLORS.black,
-  fontSize: SIZES.fontMedium,
-  fontWeight: "normal",
+const styles = StyleSheet.create({
+  text: {
+    color: COLORS.black,
+    fontSize: SIZES.fontMedium,
+    fontWeight: "normal",
+  },
+});
+
+const CustomText: React.FC<TextProps> = ({ text }) => {
+  return <Text style={styles.text}>{text}</Text>;
 };
 
-const Text: React.FC<TextProps> = ({ text }) => {
-  return <span style={textStyle}>{text}</span>;
-};
-
-export default Text;
+export default CustomText;

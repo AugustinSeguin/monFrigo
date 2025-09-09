@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { COLORS, SIZES } from "../constants/Styles";
 
 type ButtonProps = {
@@ -6,21 +7,26 @@ type ButtonProps = {
   titre: string;
 };
 
-const buttonStyle: React.CSSProperties = {
-  padding: `${SIZES.paddingMedium}px ${SIZES.paddingLarge}px`,
-  backgroundColor: COLORS.primary,
-  color: COLORS.white,
-  border: "none",
-  borderRadius: SIZES.borderRadius,
-  fontSize: SIZES.fontMedium,
-  fontWeight: "bold",
-};
+const styles = StyleSheet.create({
+  button: {
+    paddingVertical: SIZES.paddingMedium,
+    paddingHorizontal: SIZES.paddingLarge,
+    backgroundColor: COLORS.primary,
+    borderRadius: SIZES.borderRadius,
+    alignItems: "center",
+  },
+  text: {
+    color: COLORS.white,
+    fontSize: SIZES.fontMedium,
+    fontWeight: "bold",
+  },
+});
 
 const Button: React.FC<ButtonProps> = ({ action, titre }) => {
   return (
-    <button onClick={action} style={buttonStyle}>
-      {titre}
-    </button>
+    <TouchableOpacity onPress={action} style={styles.button}>
+      <Text style={styles.text}>{titre}</Text>
+    </TouchableOpacity>
   );
 };
 
