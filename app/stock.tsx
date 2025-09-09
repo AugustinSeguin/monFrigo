@@ -1,7 +1,9 @@
 import ArticleCard from "@/components/ArticleCard";
+import Button from "@/components/Button";
 import Navbar from "@/components/Navbar";
+import { useRouter } from "expo-router";
 import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../constants/Styles";
 
 const articles = [
@@ -50,13 +52,18 @@ const articles = [
 ];
 
 export default function StockScreen() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {articles.map((item, idx) => (
-          <ArticleCard key={idx} {...item} />
+        {articles.map((item) => (
+          <ArticleCard key={item.title} {...item} />
         ))}
       </ScrollView>
+      <SafeAreaView style={styles.fabContainer}>
+        <Button action={() => router.push("/add")} titre="+" />
+      </SafeAreaView>
       <Navbar activeTab="stock" />
     </SafeAreaView>
   );
@@ -67,26 +74,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
-  header: {
-    position: "sticky",
-    top: 0,
-    zIndex: 10,
-    backgroundColor: COLORS.background + "CC",
-    paddingTop: SIZES.paddingLarge,
-    paddingBottom: SIZES.paddingSmall,
-    alignItems: "center",
-    borderBottomWidth: 0,
-  },
-  headerTitle: {
-    color: COLORS.text,
-    fontSize: SIZES.fontXL,
-    fontWeight: "bold",
-    letterSpacing: -0.5,
-    textAlign: "center",
-  },
   scrollContent: {
     paddingHorizontal: SIZES.paddingLarge,
     paddingVertical: SIZES.paddingSmall,
     gap: SIZES.paddingSmall,
+    paddingBottom: 60, // Add padding to the bottom to avoid overlap with FAB
+  },
+  fabContainer: {
+    position: "absolute",
+    bottom: 90, // remonte le bouton au-dessus de la navbar
+    right: SIZES.paddingLarge,
+    zIndex: 20,
   },
 });

@@ -1,50 +1,45 @@
-# Welcome to your Expo app 👋
+# MonFrigo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MonFrigo est une application mobile développée avec Expo (React Native) pour vous aider à gérer le contenu de votre réfrigérateur, à suivre les dates de péremption et à planifier vos courses.
 
-## Get started
+## Fonctionnalités
 
-1. Install dependencies
+- **Gestion du Stock** : Visualisez rapidement les articles présents dans votre frigo.
+- **Ajout de Produits** : Ajoutez de nouveaux produits à votre stock via un formulaire simple.
+- **Scan de Codes-barres** : Utilisez la caméra de votre téléphone pour scanner des produits et les ajouter (fonctionnalité en cours de développement).
+- **Liste de Courses** : Gardez une trace des articles que vous devez acheter.
 
-   ```bash
-   npm install
-   ```
+## Technologies
 
-2. Start the app
+- **React Native**
+- **Expo**
+- **TypeScript**
+- **Expo Router** pour la navigation
 
-   ```bash
-   npx expo start
-   ```
+## Scripts Disponibles
 
-In the output, you'll find options to open the app in a
+Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### `npm start`
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Lance l'application en mode développement avec un tunnel, ce qui vous permet de la tester facilement sur un appareil physique via l'application Expo Go.
 
-## Get a fresh project
+### `npm run android`
 
-When you're ready, run:
+Lance l'application sur un émulateur Android ou un appareil connecté.
 
-```bash
-npm run reset-project
-```
+### `npm run ios`
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Lance l'application sur un simulateur iOS ou un appareil connecté.
 
-## Learn more
+### `npm run web`
 
-To learn more about developing your project with Expo, look at the following resources:
+Lance l'application dans un navigateur web.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### `npm run lint`
 
-## Join the community
+Exécute l'outil de "linting" pour vérifier la qualité du code et les erreurs de style.
 
-Join our community of developers creating universal apps.
+### `npm run reset-project`
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Réinitialise le projet en déplaçant le code de démarrage vers un dossier `app-example` et en créant un répertoire `app` vide.

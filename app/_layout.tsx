@@ -33,6 +33,15 @@ export default function AppLayout() {
             headerTitleStyle: { color: COLORS.white },
           }}
         />
+        <Stack.Screen
+          name="add"
+          options={{
+            headerTitle: "Ajotuer un article",
+            headerBackVisible: false,
+            headerStyle: { backgroundColor: COLORS.secondary },
+            headerTitleStyle: { color: COLORS.white },
+          }}
+        />
       </Stack>
     </GestureHandlerRootView>
   );

@@ -2,8 +2,8 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useRouter } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, SIZES } from "../constants/Styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type NavbarProps = {
   activeTab?: "scan" | "stock" | "buy";
@@ -74,19 +74,20 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.secondary + "CC",
     borderTopWidth: 1,
     borderTopColor: COLORS.border,
-    paddingBottom: 12,
-    paddingHorizontal: 16,
+    paddingTop: SIZES.paddingSmall,
+    paddingBottom: SIZES.paddingXS,
+    paddingHorizontal: SIZES.paddingLarge,
     zIndex: 10,
   },
   navbar: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: "flex-end",
+    alignItems: "center", // Center items vertically
   },
   navItem: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     gap: 2,
   },
   label: {
@@ -99,22 +100,6 @@ const styles = StyleSheet.create({
   activeLabel: {
     color: COLORS.primary,
     fontWeight: "700",
-  },
-  fab: {
-    position: "absolute",
-    right: 16,
-    bottom: 80,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: COLORS.primary,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: COLORS.black,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 6,
   },
 });
 
